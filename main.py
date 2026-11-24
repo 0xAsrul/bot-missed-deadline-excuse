@@ -17,6 +17,8 @@ EXCUSE = (
 
 
 def main():
+    assert len(EXCUSE) <= 200, "entry exceeds 200 characters"
+    assert "\n" not in EXCUSE, "entry must be a single line"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(EXCUSE)
